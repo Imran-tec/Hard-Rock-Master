@@ -94,6 +94,9 @@ async function searchsong(searchvalue){
     const searchResult = await fetch(`${api}/suggest/${searchvalue}`)
     const data = await searchResult.json();
     showData(data)
+    if((data.data).length == 0){
+        alert('No Song found')
+    }
 }
 
 function showData(data) {
